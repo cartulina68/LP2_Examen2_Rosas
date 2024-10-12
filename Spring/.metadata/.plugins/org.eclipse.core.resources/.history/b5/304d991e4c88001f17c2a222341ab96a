@@ -11,7 +11,7 @@
 <body>
 	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
 		<!-- Brand -->
-		<a class="navbar-brand" href="#">Spring Tool</a>
+		<a class="navbar-brand" href="#">Examen T2</a>
 
 		<!-- Toggler/Collapse Button -->
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -23,7 +23,7 @@
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
 				<li class="nav-item"><a class="nav-link" th:href="@{/producto}">Mantenimiento de productos</a></li>
-				<li class="nav-item"><a class="nav-link" th:href="@{/}">Mantenimiento de inventario</a></li>
+				<li class="nav-item"><a class="nav-link" th:href="@{/inventario}">Mantenimiento de inventario</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -42,7 +42,7 @@
 		<table class="table table-striped table-bordered">
 			<thead class="table-dark">
 				<tr>
-					<th>Nro de inventario</th>
+					<th># de inventario</th>
 					<th>Fecha</th>
 					<th>nombre</th>
 					<th>Costo de ingreso</th>

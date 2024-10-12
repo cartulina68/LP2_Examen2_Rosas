@@ -11,7 +11,7 @@
 <body>
 	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
 		<!-- Brand -->
-		<a class="navbar-brand" href="#">Spring Tool</a>
+		<a class="navbar-brand" href="#">Examen T2</a>
 
 		<!-- Toggler/Collapse Button -->
 		<button class="navbar-toggler" type="button" data-toggle="collapse"

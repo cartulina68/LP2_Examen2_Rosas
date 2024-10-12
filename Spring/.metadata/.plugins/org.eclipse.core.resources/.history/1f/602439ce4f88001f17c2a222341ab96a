@@ -34,19 +34,25 @@
                     <form th:action="@{/producto/{id} (id=${producto.idProd})}" th:object="${producto}" method="POST">
                         
                         <div class="form-group" style="display: none">
-                            <label>Id producto</label>
+                            <label>Codigo</label>
                             <input type="text" name="idProd" th:field="*{idProd}"
                                    class="form-control"
-                                   placeholder="Ingresar ID" />
+                                   placeholder="Ingresar Codigo" />
                         </div>
                         
                           <div class="form-group">
-                            <label>Nombre</label>
-                            <input type="text" name="nombre" th:field="*{nomProd}"
+                            <label>Descripcion</label>
+                            <input type="text" name="descripcion" th:field="*{descripcion}"
                                    class="form-control"
-                                   placeholder="Ingresar Nombre" />
+                                   placeholder="Ingresar Descripcion" />
                         </div>
                         
+                        <div class="form-group">
+                            <label>Precio</label>
+                            <input type="text" name="precio" th:field="*{precio}"
+                                   class="form-control"
+                                   placeholder="Ingresar Precio" />
+                        </div>                        
                         <div class="form-group">
                             <label>Stock</label>
                             <input type="text" name="stock" th:field="*{stock}"

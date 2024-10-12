@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="ISO-8859-1">
-        <title>Editar producto</title>
+        <title>Actualizar inventario</title>
         <link rel="stylesheet"
               href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
               integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -20,51 +20,46 @@
             
             <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-				<li class="nav-item"><a class="nav-link" th:href="@{/producto}">Mantenimiento de productos</a></li>
-				<li class="nav-item"><a class="nav-link" th:href="@{/}">Mantenimiento de inventario</a></li>
-			</ul>
+                <li class="nav-item"><a class="nav-link" th:href="@{/producto/index}">Mantenimiento de productos</a></li>
+				<li class="nav-item"><a class="nav-link" th:href="@{/inventario/index}">Mantenimiento de inventario</a></li>
             </div>
         </nav>
         <div class="container mt-3">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-                    <h1 class = "text-center"> Editar Producto</h1>
+                    <h1 class = "text-center"> Editar Inventario</h1>
                     <div class="card-body">
-                    <form th:action="@{/producto/{id} (id=${producto.idProd})}" th:object="${producto}" method="POST">
+                    <form th:action="@{/inventario/{id} (id=${inventario.nroInventario})}" th:object="${inventario}" method="POST">
                         
                         <div class="form-group" style="display: none">
-                            <label>Id producto</label>
-                            <input type="text" name="idProd" th:field="*{idProd}"
+                            <label>Nro de inventario</label>
+                            <input type="text" name="nroInventario" th:field="*{nroInventario}"
                                    class="form-control"
-                                   placeholder="Ingresar ID" />
+                                   placeholder="Ingresar Nro" />
                         </div>
                         
                           <div class="form-group">
-                            <label>Nombre</label>
-                            <input type="text" name="nombre" th:field="*{nomProd}"
+                            <label>Fecha</label>
+                            <input type="date" name="fecha" th:field="*{fecha}"
                                    class="form-control"
-                                   placeholder="Ingresar Nombre" />
+                                   placeholder="Ingresar fecha" />
                         </div>
                         
                         <div class="form-group">
-                            <label>Stock</label>
-                            <input type="text" name="stock" th:field="*{stock}"
+                            <label>ID de producto</label>
+                            <input type="text" name="producto" th:field="*{producto}"
                                    class="form-control"
-                                   placeholder="Ingresar Stock" />
+                                   placeholder="Ingresar ID" />
+                        </div>                        
+                        <div class="form-group">
+                            <label>Costo de ingreso</label>
+                            <input type="text" name="costoIngreso" th:field="*{costoIngreso}"
+                                   class="form-control"
+                                   placeholder="Ingresar costo" />
                         </div> 
-                        
-                          <div class="form-group">
-                            <label>Categoria</label>
-                            <select th:field="*{categoria}" name="categoriaList" class="form-control">
-                                <option th:each="categoria :${categoriaList}" th:value="${categoria.id}" th:text="${categoria.descripcion}" />
-                            </select>   
-                        </div>    
-                        
-                     
-                                       
+                
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Subir</button>
                         </div>
                             
                     </form>

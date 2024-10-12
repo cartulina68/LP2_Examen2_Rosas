@@ -24,7 +24,7 @@
                         <a class="nav-link" th:href="@{/}">Consultar inventario</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/producto}">Mantenimiento Producto</a>
+                        <a class="nav-link" th:href="@{/producto/}">Mantenimiento Producto</a>
                     </li>
                 </ul>
             </div>
