@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Inventario</title>
+</head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<body>
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<!-- Brand -->
+		<a class="navbar-brand" href="#">Examen T2</a>
+
+		<!-- Toggler/Collapse Button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<!-- Navbar links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" th:href="@{/producto}">Mantenimiento de productos</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container">
+		<div class="row">
+			<h1>Lista de Inventarios Registrados</h1>
+		</div>
+
+
+		<table class="table table-striped table-bordered">
+			<thead class="table-dark">
+				<tr>
+					<th># de inventario</th>
+					<th>Fecha</th>
+					<th>nombre</th>
+					<th>Costo de ingreso</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="inventario: ${inventarios}">
+					<td th:text="${inventario.nroInventario}"></td>
+					<td th:text="${inventario.fecha}"></td>
+					<td th:text="${inventario.idProd.nomProd}"></td>
+					<td th:text="${inventario.costoIngreso}"></td>
+
+
+
+					<td><a th:href="@{/inventario/new}" class="btn btn-primary">Registrar</a>
+						<a th:href="@{/inventario/edit/{id}(id=${inventario.nroInventario})}" class="btn btn-primary">Actualizar</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>
