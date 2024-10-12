@@ -1,0 +1,26 @@
+package com.cibertec.app.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+
+import com.cibertec.app.service.CategoriaService;
+import com.cibertec.app.service.ProductoService;
+
+@Controller
+public class ProductoController {
+
+	@Autowired
+	private ProductoService productoService;
+	
+	@Autowired
+	private CategoriaService categoriaService;
+	
+	@GetMapping("/producto")
+	public String listProductos(Model model) {
+		model.addAttribute("productos", productoService.getAllProducto());
+		model.addAttribute("categoriaList", categoriaService.getAllCategoria());
+		
+		return "producto/index";
+	}
+}

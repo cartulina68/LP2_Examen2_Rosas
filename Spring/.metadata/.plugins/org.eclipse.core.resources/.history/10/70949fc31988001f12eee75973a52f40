@@ -1,0 +1,6 @@
+package com.cibertec.app.service;
+
+public interface CategoriaService {
+
+	public List<Categoria> getAllCategoria();
+}

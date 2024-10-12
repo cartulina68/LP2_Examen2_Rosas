@@ -1,0 +1,6 @@
+package com.cibertec.app.repository;
+
+@Repository
+public interface InventarioRepository extends JpaRepository<Producto, Integer>{
+
+}

@@ -1,0 +1,19 @@
+package com.cibertec.app.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.cibertec.app.service.InventarioService;
+import com.cibertec.app.service.ProductoService;
+
+@Controller
+public class InventarioController {
+
+	@Autowired
+	private InventarioService inventarioService;
+	
+	@Autowired
+	private ProductoService productoService;
+	
+	@GetMapping("/inventario")
+}
